@@ -1,1 +1,71 @@
 /* Empty. Add your own CSS if you like */
+.app-theme{
+    background-color: #007ac1!important;
+}
+.app-titel{
+    font-weight: bold;
+    text-align: center!important;
+    text-transform: uppercase;
+    color: white!important;
+}
+
+.list{
+    background: #007ac1!important;
+}
+
+.app-text{
+    color: white!important;
+}
+
+.app-theme-screen{
+    background: #eaeaea;
+}
+
+.item-content{
+    background:  #007ac1!important;
+    color: white!important;
+    font-weight: 500!important;
+    border-bottom: 1px solid white!important;
+}
+
+.bar-header{
+    background-color:  #007ac1!important;
+    color: white!important;
+    font-weight: 500!important;
+    border-bottom: 3px solid white!important;
+}
+
+.ion-navicon{
+    color:white!important;
+}
+
+.header-item{
+    text-transform: uppercase;
+    color:white!important;
+}
+
+.name-city-container{
+    text-align: center;
+    font-size: 25px;
+    color:  #007ac1!important;
+}
+
+.right-arrow-container{
+    text-align:  right;
+}
+
+
+
+.begin-button{
+    background: #007ac1!important;
+    color:white!important;
+}
+
+.city-info-container{
+    background-color: white;
+}
+
+.city-img{
+    height: 200px!important;
+    width: 100%!important;
+}

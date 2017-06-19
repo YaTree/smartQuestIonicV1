@@ -1,6 +1,3 @@
-/**
- * Created by yatree on 10/06/17.
- */
 angular
   .module('login.module')
   .config(function config($stateProvider) {

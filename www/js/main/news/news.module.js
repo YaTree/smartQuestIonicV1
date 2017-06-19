@@ -3,4 +3,4 @@
  */
 'use strict';
 
-angular.module('news.module', ['ui.router']);
+angular.module('news.module', ['ui.router', 'ksSwiper']);

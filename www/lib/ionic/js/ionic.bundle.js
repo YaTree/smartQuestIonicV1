@@ -55628,7 +55628,7 @@ function($ionicLoadingConfig, $ionicBody, $ionicTemplateLoader, $ionicBackdrop, 
  *     <ion-header-bar>
  *       <h1 class="title">My Modal title</h1>
  *     </ion-header-bar>
- *     <ion-content>
+ *     <ion-content class="app-theme-screen">
  *       Hello!
  *     </ion-content>
  *   </ion-modal-view>
@@ -56277,7 +56277,7 @@ IonicModule
  *     <ion-header-bar>
  *       <h1 class="title">My Popover Title</h1>
  *     </ion-header-bar>
- *     <ion-content>
+ *     <ion-content class="app-theme-screen">
  *       Hello!
  *     </ion-content>
  *   </ion-popover-view>
@@ -56288,7 +56288,7 @@ IonicModule
  * .controller('MyController', function($scope, $ionicPopover) {
  *
  *   // .fromTemplate() method
- *   var template = '<ion-popover-view><ion-header-bar> <h1 class="title">My Popover Title</h1> </ion-header-bar> <ion-content> Hello! </ion-content></ion-popover-view>';
+ *   var template = '<ion-popover-view><ion-header-bar> <h1 class="title">My Popover Title</h1> </ion-header-bar> <ion-content class="app-theme-screen"> Hello! </ion-content></ion-popover-view>';
  *
  *   $scope.popover = $ionicPopover.fromTemplate(template, {
  *     scope: $scope
@@ -57088,7 +57088,7 @@ IonicModule
  *
  * ```html
  * <body ng-controller="MainCtrl">
- *   <ion-content>
+ *   <ion-content class="app-theme-screen">
  *     <button ng-click="scrollTop()">Scroll to Top!</button>
  *   </ion-content>
  * </body>
@@ -62063,7 +62063,7 @@ IonicModule
  * @usage
  * #### Basic Item List ([codepen](http://codepen.io/ionic/pen/0c2c35a34a8b18ad4d793fef0b081693))
  * ```html
- * <ion-content>
+ * <ion-content class="app-theme-screen">
  *   <ion-item collection-repeat="item in items">
  *     {% raw %}{{item}}{% endraw %}
  *   </ion-item>
@@ -62072,7 +62072,7 @@ IonicModule
  *
  * #### Grid of Images ([codepen](http://codepen.io/ionic/pen/5515d4efd9d66f780e96787387f41664))
  * ```html
- * <ion-content>
+ * <ion-content class="app-theme-screen">
  *   <img collection-repeat="photo in photos"
  *     item-width="33%"
  *     item-height="200px"
@@ -62082,7 +62082,7 @@ IonicModule
  *
  * #### Horizontal Scroller, Dynamic Item Width ([codepen](http://codepen.io/ionic/pen/67cc56b349124a349acb57a0740e030e))
  * ```html
- * <ion-content>
+ * <ion-content class="app-theme-screen">
  *   <h2>Available Kittens:</h2>
  *   <ion-scroll direction="x" class="available-scroller">
  *     <div class="photo" collection-repeat="photo in main.photos"
@@ -64948,7 +64948,7 @@ IonicModule
  *   <!-- where the initial view template will be rendered -->
  *   <ion-nav-view>
  *     <ion-view>
- *       <ion-content>Hello!</ion-content>
+ *       <ion-content class="app-theme-screen">Hello!</ion-content>
  *     </ion-view>
  *   </ion-nav-view>
  * </body>
@@ -65016,7 +65016,7 @@ IonicModule
  *         I'm a button on the primary of the navbar!
  *       </button>
  *     </ion-nav-buttons>
- *     <ion-content>
+ *     <ion-content class="app-theme-screen">
  *       Some super content here!
  *     </ion-content>
  *   </ion-view>
@@ -65124,7 +65124,7 @@ IonicModule
  *     <ion-nav-title>
  *       <img src="logo.svg">
  *     </ion-nav-title>
- *     <ion-content>
+ *     <ion-content class="app-theme-screen">
  *       Some super content here!
  *     </ion-content>
  *   </ion-view>
@@ -67433,7 +67433,7 @@ function($timeout, $ionicConfig) {
  * <ion-nav-bar></ion-nav-bar>
  * <ion-nav-view>
  *   <ion-view view-title="My Page">
- *     <ion-content>
+ *     <ion-content class="app-theme-screen">
  *       Hello!
  *     </ion-content>
  *   </ion-view>
