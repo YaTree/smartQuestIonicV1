@@ -28,6 +28,23 @@ function NewsCtrl($scope) {
         },
     ];
 
+    $scope.attaches = [{
+            name:'jerusalem',
+            label: 'Jerusalem',
+            info: 'Jerusalem quest info'
+        },
+        {
+            name:'hifa',
+            label: 'Haifa',
+            info: 'Haifa quest info'
+        },
+        {
+            name:'tel_aviv',
+            label: 'Tel Aviv',
+            info: 'Tel Aviv quest info'
+        },
+    ];
+
     $scope.show = "This is from NewsCtrl";
 
 }

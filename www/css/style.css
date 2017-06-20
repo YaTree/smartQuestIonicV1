@@ -69,3 +69,13 @@
     height: 200px!important;
     width: 100%!important;
 }
+
+.frame{
+    background-color: white;
+    margin: 5px;
+}
+
+.attach-img{
+    height: 100px;
+    width: 100%;
+}
