@@ -5,13 +5,46 @@
 
 angular
   .module('registration.module')
-  .controller('RegistrationCtrl', LoginCtrl);
+  .controller('RegistrationCtrl', RegistrationCtrl);
 
-LoginCtrl.$inject = ['$scope', '$state'];
+RegistrationCtrl.$inject = ['$scope', '$state', 'apiService', 'cacheService', '$ionicLoading'];
 
-function LoginCtrl($scope, $state) {
-  $scope.doLogin = function() {
-    $state.go('app.main.profile');
+
+function RegistrationCtrl($scope, $state, apiService, cacheService, $ionicLoading) {
+  $scope.user = {
+    email: '',
+    password: ''
+  };
+  $scope.errorAlert = '';
+
+  $scope.doRegistration = function (registrationForm) {
+    if (registrationForm.$valid) {
+      $ionicLoading.show({template: '<ion-spinner icon="ios"></ion-spinner><p>Registration...</p>'});
+      apiService.createNewUser($scope.user.email, $scope.user.password)
+        .then(function (response) {
+          console.log(response);
+
+          if (response.data.status == 'failed') {
+            $scope.errorAlert = response.data.message;
+          } else {
+            apiService.getAuthToken($scope.user.email, $scope.user.password)
+              .then(function (resp) {
+                $ionicLoading.hide();
+
+                console.log (resp.data);
+                cacheService.saveUser({
+                  userLogin: $scope.user.email,
+                  userPassword: $scope.user.password,
+                  userToken: resp.data.token
+                });
+                $state.go('app.main.news');
+              });
+          }
+        });
+
+    }
+
   };
 }
+
 

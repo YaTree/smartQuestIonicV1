@@ -4,14 +4,12 @@
 'use strict';
 
 angular
-  .module('login.module')
-  .controller('LoginCtrl', LoginCtrl);
+  .module('forbidden.module')
+  .controller('ForbiddenCtrl', ForbiddenCtrl);
 
-LoginCtrl.$inject = ['$scope', '$state'];
+ForbiddenCtrl.$inject = ['$scope', '$state'];
 
-function LoginCtrl($scope, $state) {
-  $scope.doLogin = function() {
-    $state.go('app.main.profile');
-  };
+function ForbiddenCtrl($scope, $state) {
+
 }
 

@@ -7,6 +7,7 @@ angular
     $stateProvider
       .state('app.main.profile', {
         url: '/profile',
+        requireAuthentication: true,
         views: {
           'menuContent': {
             templateUrl: 'js/main/profile/profile.html',

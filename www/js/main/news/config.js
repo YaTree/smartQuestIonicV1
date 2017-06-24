@@ -7,6 +7,7 @@ angular
     $stateProvider
       .state('app.main.news', {
         url: '/news',
+        requireAuthentication: true,
         views: {
           'menuContent': {
             templateUrl: 'js/main/news/news.html',

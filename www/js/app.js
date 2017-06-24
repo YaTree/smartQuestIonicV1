@@ -6,7 +6,7 @@ angular.module('smart.quest', ['ionic', 'smart.quest.controllers',
   'profile.module', 'logout.module',
   'main.module', 'forbidden.module'])
 
-  .run(function ($ionicPlatform, $rootScope) {
+  .run(function ($ionicPlatform, $rootScope, $state) {
     $ionicPlatform.ready(function () {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
@@ -24,8 +24,10 @@ angular.module('smart.quest', ['ionic', 'smart.quest.controllers',
     $rootScope.$on('$stateChangeStart', function (event, next) {
 
       var currentUser = JSON.parse(window.localStorage.getItem('currentUser'));
-      if ($rootScope.currentUser === undefined && currentUser === null) {
+      //console.log ('stateChange: ',currentUser, $rootScope.currentUser);
+      if ( ($rootScope.currentUser === undefined || $rootScope.currentUser === null) && currentUser === null) {
         //noinspection JSUnresolvedVariable
+        console.log ('user is null');
         if (next.requireAuthentication) {
           //noinspection JSUnresolvedFunction
           event.preventDefault(); // prevent current page from loading
@@ -36,6 +38,7 @@ angular.module('smart.quest', ['ionic', 'smart.quest.controllers',
         }
       }
       else {
+        console.log('stateChange in app.js: user is found');
         $rootScope.currentUser = currentUser;
       }
     });
@@ -59,5 +62,5 @@ angular.module('smart.quest', ['ionic', 'smart.quest.controllers',
       });
 
 
-    $urlRouterProvider.otherwise('/login');
+    $urlRouterProvider.otherwise('/checkLogin');
   });
