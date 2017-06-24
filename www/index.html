@@ -3,7 +3,10 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no, width=device-width">
-        <meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src  'self' 'unsafe-inline' *">
+        <!--<meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src  'self' 'un safe-inline' *">-->
+        <meta http-equiv="Content-Security-Policy" content="default-src *;
+           img-src * 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
+           style-src  'self' 'unsafe-inline' *">
         <title></title>
 
         <link rel="manifest" href="manifest.json">
@@ -19,7 +22,7 @@
 
         <link href="lib/ionic/css/ionic.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
-
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
         <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
         <link href="css/ionic.app.css" rel="stylesheet">
         -->
@@ -37,6 +40,10 @@
         <script src="js/login/login.module.js"></script>
         <script src="js/login/config.js"></script>
         <script src="js/login/controller/login.controller.js"></script>
+
+        <script src="js/registration/registration.module.js"></script>
+        <script src="js/registration/config.js"></script>
+         <script src="js/registration/controller/registration.controller.js"></script>
 
         <script src="js/main/main.module.js"></script>
         <script src="js/main/config.js"></script>

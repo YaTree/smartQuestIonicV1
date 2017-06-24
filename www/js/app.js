@@ -1,5 +1,6 @@
 angular.module('smart.quest', ['ionic', 'smart.quest.controllers',
-  'login.module', 'news.module',
+  'login.module', 'registration.module',
+  'news.module',
   'scenarios.module', 'games.module',
   'about.module', 'orders.module',
   'profile.module', 'logout.module',

@@ -1,0 +1,50 @@
+<ion-view view-title="Sign up">
+  <ion-content class="pre-signed-content" padding="true">
+
+    <h3 class="logo"> Smart Quest </h3>
+
+
+    <form name="form" ng-submit="register()">
+
+
+      <div class="form-input-holder">
+        <input name="email" type="email" autocomplete="off" class="input text-input centerised"
+               placeholder="Email" id="email-input" ng-model="user.email" required>
+
+        <input name="password" type="password" autocomplete="off" class="input text-input centerised"
+               id="password-input" placeholder="Password" ng-model="user.password" required>
+
+        <input class="input submit-button capitalised" value="Sign up" type="submit" />
+      </div>
+      <div class="row login-options">
+        <div class="col">
+          Already have an account?
+        </div>
+        <div class="col">
+          <button ui-sref="app.login" class="form-submit-button capitalised redirect-button">
+            Login
+          </button>
+
+        </div>
+      </div>
+    </form>
+    <h2 class="error-text">
+      {{ errorAlert }}
+    </h2>
+
+    <div class="down-bar">
+      <div class="row login-or">
+        <div class="login-or-hr-container"><hr /></div>
+        <div id="login-or-word-container">or</div>
+        <div class="login-or-hr-container"><hr /></div>
+      </div>
+      <div class="sign-up-options">
+        <p class="capitalised sign-up-text">sign up with</p>
+        <a href="/auth/linkedin" class="icon-span-margin"><img class="login-mini-icon" src="images/login/linkedin-icon-square-for-login-page-BT.png" /></a>
+        <a href="/auth/google" class="icon-span-margin"><img class="login-mini-icon" src="images/login/google-icon-square-for-login-page-BT.png" /></a>
+        <a href="/auth/facebook"><img class="login-mini-icon" src="images/login/twiiter-icon-square-for-login-page-BT.png" /></a>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

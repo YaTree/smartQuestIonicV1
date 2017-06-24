@@ -5,7 +5,7 @@ angular.module('smart.quest')
   .directive('sqTest', function () {
     return {
       restrict: 'E',
-      templateUrl: 'js/directives/test/sqTest.html',
+      templateUrl: 'js/directives/test/ sqTest.html',
       scope: {
         labelText: '@'
       }
