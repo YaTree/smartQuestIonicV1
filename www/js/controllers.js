@@ -10,3 +10,4 @@ angular.module('smart.quest.controllers', [])
     $state.go('app.main.news',  {}, { reload: true });
   }
 });
+
