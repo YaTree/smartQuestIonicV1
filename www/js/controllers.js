@@ -7,7 +7,10 @@ angular.module('smart.quest.controllers', [])
   console.log('AppCtrl: running');
 
   if (currentUser != null) {
-    $state.go('app.main.news',  {}, { reload: true });
+    $state.go('app.main.news', {}, { reload: true });
+  } else {
+    $state.go('app.login', {}, { reload: true });
   }
+
 });
 

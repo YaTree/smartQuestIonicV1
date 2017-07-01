@@ -2,18 +2,20 @@
  * Created by yatree on 10/06/17.
  */
 angular
-  .module('news.module')
+  .module('task1.module')
   .config(function config($stateProvider) {
     $stateProvider
-      .state('app.main.news', {
-        url: '/news',
+      .state('app.main.task1', {
+        url: '/task1',
         requireAuthentication: true,
         views: {
           'menuContent': {
-            templateUrl: 'js/main/news/news.html',
-            controller: 'NewsCtrl'
+            templateUrl: 'js/main/tasks/task1/task1.html',
+            controller: 'Task1Ctrl'
           }
         },
-
+        params: {
+          obj: null
+        },
       })
   });

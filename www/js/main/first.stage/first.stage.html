@@ -1,0 +1,27 @@
+<ion-view view-title="Preview" hide-back-button="true">
+   <ion-content>
+     <ion-slides  options="options" slider="previewSlider">
+       <ion-slide-page>
+        <div>
+          Welcome to {{firstStage.stage_name}}</br>
+          You will spent here {{firstStage.stage_duration}} min</br>
+          {{firstStage.stage_description}}
+        </div>
+
+         <div class = "row padding">
+           <button class="button button-block begin-button" ng-click="goToFirstTask(firstStage.stage_id)">
+             Fuck off! I want to play!
+           </button>
+         </div>
+       </ion-slide-page>
+
+       <ion-slide-page>
+         <h2>
+           Here will be tips about interface.
+         </h2>
+       </ion-slide-page>
+     </ion-slides>
+
+
+   </ion-content>
+</ion-view>

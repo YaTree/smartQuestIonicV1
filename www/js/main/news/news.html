@@ -1,49 +1,63 @@
 <ion-view view-title="News">
   <ion-content   class="margin app-theme-screen">
-    <ks-swiper-container initial-slide="1" speed="2000" loop="true" show-nav-buttons="false" slides-per-view="1" space-between="100" pagination-clickable="false" height="200px;" setWrapperSize="true" override-parameters="{
-        effect: 'coverflow',
-        coverflow: {
-        rotate: 0,
-        stretch: 0,
-        depth: 100,
-        modifier: 1,
-        slideShadows : false,
-        centeredSlides : true
-    }}">
-    <ks-swiper-slide class="swiper-slide" ng-repeat="city in cities">
+    <div>
+    <ion-slides  options="options" slider="swiper">
+      <ion-slide-page ng-repeat="quest in questList">
         <div class="row custom-padding">
-            <div class = "col">
-                <i class="icon ion-chevron-left"></i>
-            </div>
-            <div class = "col name-city-container">
-                {{city.label}}
-            </div>
-            <div class = "col right-arrow-container">
-                <i class="icon ion-chevron-right"></i>
-            </div>
+          <div class = "col">
+            <i class="icon ion-chevron-left"></i>
+          </div>
+          <div class = "col name-city-container">
+            {{quest.scenario_name}}
+            <!--{{city.name}}-->
+          </div>
+          <div class = "col right-arrow-container">
+            <i class="icon ion-chevron-right"></i>
+          </div>
         </div>
 
-        <img class="city-img" ng-src="img/{{city.name}}.jpg" >
-        <ion-row>
-            <ion-col>
-                <div class = "row padding">
-                    <div class = "col padding city-info-container">
-                      {{ city.info }}
-                    </div>
-                </div>
-            </ion-col>
-            <ion-col>
-                <div class = "row padding">
-                    <button class="button button-block begin-button">
-                        Begin Quest!
-                    </button>
-                </div>
-            </ion-col>
-        </ion-row>
-        </ks-swiper-slide>
-    </ks-swiper-container>
-    <img-line label-text="HOHOHO YA TEST Directive!"></img-line>
+        <img class="city-img" ng-src="img/{{quest.scenario_name}}.jpg" >
 
+        <!--<img class="city-img" ng-src="img/{{city.name}}.jpg" >-->
+        <ion-row>
+          <ion-col>
+            <div class = "row padding">
+              <div class = "col padding city-info-container">
+                {{ quest.scenario_description }}
+                <!--{{city.info}}-->
+              </div>
+            </div>
+          </ion-col>
+
+        </ion-row>
+        <div class="row">
+          <div class="col-33">
+            Price: </br>
+            {{ quest.scenario_price }}
+          </div>
+          <div class="col-33">
+            Difficult: </br>
+            <!--{{ quest.scenario_diffecult }}-->
+            {{ quest.scenario_id }}
+          </div>
+          <div class="col-33">
+            Rating: </br>
+            {{ ((quest.scenario_rate)/(quest.scenario_votes))| number: 2 }}
+          </div>
+        </div>
+
+      </ion-slide-page>
+
+    </ion-slides>
+
+
+    <div class = "row padding">
+      <button class="button button-block begin-button" ng-click="startQuest(current_scenario_id)">
+        Start Quest
+      </button>
+    </div>
+    <img-line label-text="HOHOHO YA TEST Directive!"></img-line>
+    </div>
   </ion-content>
 
 </ion-view>

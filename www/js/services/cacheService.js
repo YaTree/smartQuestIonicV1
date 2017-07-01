@@ -10,8 +10,12 @@ angular.module('smart.quest')
       window.localStorage.setItem('currentUser', JSON.stringify(loginedUser));
     }
 
-    return {
-      saveUser: saveUser
+    function saveTasks(scenarioId, tasksList) {
+      window.localStorage.setItem('tasks' + scenarioId,JSON.stringify(tasksList));
+    }
 
+    return {
+      saveUser: saveUser,
+      saveTasks:saveTasks
     }
   }]);

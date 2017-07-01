@@ -1,9 +1,13 @@
 angular.module('smart.quest', ['ionic', 'smart.quest.controllers',
   'login.module', 'registration.module',
-  'news.module',
+  'news.module', 'first.stage.module',
   'scenarios.module', 'games.module',
   'about.module', 'orders.module',
   'profile.module', 'logout.module',
+
+
+  'task0.module','task1.module','task2.module','task3.module',
+
   'main.module', 'forbidden.module'])
 
   .run(function ($ionicPlatform, $rootScope, $state) {
@@ -63,4 +67,13 @@ angular.module('smart.quest', ['ionic', 'smart.quest.controllers',
 
 
     $urlRouterProvider.otherwise('/checkLogin');
-  });
+  })
+  .config(['$ionicConfigProvider', function($ionicConfigProvider) {
+
+    $ionicConfigProvider.tabs.position('bottom'); // other values: top
+
+  }]);
+  // .config(function ($httpProvider) {
+  //   $httpProvider.interceptors.push('AuthInterceptor');
+  // });
+;

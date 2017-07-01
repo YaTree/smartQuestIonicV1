@@ -1,100 +1,129 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no, width=device-width">
-        <!--<meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src  'self' 'un safe-inline' *">-->
-        <meta http-equiv="Content-Security-Policy" content="default-src *;
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no, width=device-width">
+  <!--<meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src  'self' 'un safe-inline' *">-->
+  <meta http-equiv="Content-Security-Policy" content="default-src gap://ready file://* *;
            img-src * 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
            style-src  'self' 'unsafe-inline' *">
-        <title></title>
+  <title></title>
 
-        <link rel="manifest" href="manifest.json">
+  <link rel="manifest" href="manifest.json">
 
-        <!-- un-comment this code to enable service worker
-        <script>
-          if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('service-worker.js')
-              .then(() => console.log('service worker installed'))
-              .catch(err => console.log('Error', err));
-          }
-        </script>-->
+  <!-- un-comment this code to enable service worker
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('service worker installed'))
+        .catch(err => console.log('Error', err));
+    }
+  </script>-->
 
-        <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-        <link href="css/style.css" rel="stylesheet">
-        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
-        <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
-        <link href="css/ionic.app.css" rel="stylesheet">
-        -->
+  <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+  <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+  <link href="css/ionic.app.css" rel="stylesheet">
+  -->
 
-        <!-- ionic/angularjs js -->
-        <script src="lib/ionic/js/ionic.bundle.js"></script>
+  <!-- ionic/angularjs js -->
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
+  <!--<script src="http://code.ionicframework.com/nightly/js/ionic.bundle.js"></script>-->
+  <!-- cordova script (this will be a 404 during development) -->
+  <script src="cordova.js"></script>
 
-        <!-- cordova script (this will be a 404 during development) -->
-        <script src="cordova.js"></script>
+  <!-- your app's js -->
+  <script src="js/app.js"></script>
+  <script src="js/controllers.js"></script>
 
-        <!-- your app's js -->
-        <script src="js/app.js"></script>
-        <script src="js/controllers.js"></script>
+  <script src="js/login/login.module.js"></script>
+  <script src="js/login/config.js"></script>
+  <script src="js/login/controller/login.controller.js"></script>
 
-        <script src="js/login/login.module.js"></script>
-        <script src="js/login/config.js"></script>
-        <script src="js/login/controller/login.controller.js"></script>
+  <script src="js/registration/registration.module.js"></script>
+  <script src="js/registration/config.js"></script>
+  <script src="js/registration/controller/registration.controller.js"></script>
 
-        <script src="js/registration/registration.module.js"></script>
-        <script src="js/registration/config.js"></script>
-         <script src="js/registration/controller/registration.controller.js"></script>
-
-        <script src="js/main/main.module.js"></script>
-        <script src="js/main/config.js"></script>
-        <!--<script src="js/login/controller/login.controller.js"></script>-->
-
-
-        <script src="js/main/news/news.module.js"></script>
-        <script src="js/main/news/config.js"></script>
-        <script src="js/main/news/controller/news.controller.js"></script>
-
-        <script src="js/main/scenarios/scenarios.module.js"></script>
-        <script src="js/main/scenarios/config.js"></script>
-        <script src="js/main/scenarios/controller/scenarios.controller.js"></script>
-
-        <script src="js/main/games/games.module.js"></script>
-        <script src="js/main/games/config.js"></script>
-        <script src="js/main/games/controller/games.controller.js"></script>
-
-        <script src="js/main/orders/orders.module.js"></script>
-        <script src="js/main/orders/config.js"></script>
-        <script src="js/main/orders/controller/orders.controller.js"></script>
-
-        <script src="js/main/profile/profile.module.js"></script>
-        <script src="js/main/profile/config.js"></script>
-        <script src="js/main/profile/controller/profile.controller.js"></script>
-
-        <script src="js/main/about/about.module.js"></script>
-        <script src="js/main/about/config.js"></script>
-        <script src="js/main/about/controller/about.controller.js"></script>
-
-        <script src="js/main/logout/logout.module.js"></script>
-        <script src="js/main/logout/config.js"></script>
-        <script src="js/main/logout/controller/logout.controller.js"></script>
-
-        <script src="js/forbidden/forbidden.module.js"></script>
-        <script src="js/forbidden/config.js"></script>
-        <script src="js/forbidden/controller/forbidden.controller.js"></script>
-
-        <link href="lib/swiper/dist/css/swiper.min.css" rel="stylesheet"/>
-        <script src="lib/swiper/dist/js/swiper.js"></script>
-        <script src="lib/angular-swiper/dist/angular-swiper.js"></script>
-        <script src="js/directives/test/testDirective.js"></script>
-        <script src="js/directives/img-line/imgLineDirective.js"></script>
+  <script src="js/main/main.module.js"></script>
+  <script src="js/main/config.js"></script>
+  <!--<script src="js/login/controller/login.controller.js"></script>-->
 
 
-        <script src="js/services/apiService.js"></script>
-        <script src="js/services/cacheService.js"></script>
-  </head>
+  <script src="js/main/news/news.module.js"></script>
+  <script src="js/main/news/config.js"></script>
+  <script src="js/main/news/controller/news.controller.js"></script>
+
+  <script src="js/main/scenarios/scenarios.module.js"></script>
+  <script src="js/main/scenarios/config.js"></script>
+  <script src="js/main/scenarios/controller/scenarios.controller.js"></script>
+
+  <script src="js/main/games/games.module.js"></script>
+  <script src="js/main/games/config.js"></script>
+  <script src="js/main/games/controller/games.controller.js"></script>
+
+  <script src="js/main/orders/orders.module.js"></script>
+  <script src="js/main/orders/config.js"></script>
+  <script src="js/main/orders/controller/orders.controller.js"></script>
+
+  <script src="js/main/profile/profile.module.js"></script>
+  <script src="js/main/profile/config.js"></script>
+  <script src="js/main/profile/controller/profile.controller.js"></script>
+
+  <script src="js/main/about/about.module.js"></script>
+  <script src="js/main/about/config.js"></script>
+  <script src="js/main/about/controller/about.controller.js"></script>
+
+  <script src="js/main/logout/logout.module.js"></script>
+  <script src="js/main/logout/config.js"></script>
+  <script src="js/main/logout/controller/logout.controller.js"></script>
+
+  <script src="js/forbidden/forbidden.module.js"></script>
+  <script src="js/forbidden/config.js"></script>
+  <script src="js/forbidden/controller/forbidden.controller.js"></script>
+
+  <link href="lib/swiper/dist/css/swiper.min.css" rel="stylesheet"/>
+  <script src="lib/swiper/dist/js/swiper.js"></script>
+  <script src="lib/angular-swiper/dist/angular-swiper.js"></script>
+  <script src="js/directives/test/testDirective.js"></script>
+  <script src="js/directives/img-line/imgLineDirective.js"></script>
 
 
-  <body ng-app="smart.quest" ng-controller="AppCtrl">
-    <ion-nav-view name="mainView"></ion-nav-view>
-  </body>
+
+
+
+  <script src="js/main/tasks/task0/task0.module.js"></script>
+  <script src="js/main/tasks/task0/config.js"></script>
+  <script src="js/main/tasks/task0/controller/task0.controller.js"></script>
+
+  <script src="js/main/tasks/task1/task1.module.js"></script>
+  <script src="js/main/tasks/task1/config.js"></script>
+  <script src="js/main/tasks/task1/controller/task1.controller.js"></script>
+
+  <script src="js/main/tasks/task2/task2.module.js"></script>
+  <script src="js/main/tasks/task2/config.js"></script>
+  <script src="js/main/tasks/task2/controller/task2.controller.js"></script>
+
+  <script src="js/main/tasks/task3/task3.module.js"></script>
+  <script src="js/main/tasks/task3/config.js"></script>
+  <script src="js/main/tasks/task3/controller/task3.controller.js"></script>
+
+
+
+  <!--<script src="js/main/stages_tabs_do_not_user/stages.module.js"></script>-->
+  <!--<script src="js/main/stages_tabs_do_not_user/config.js"></script>-->
+  <!--<script src="js/main/stages_tabs_do_not_user/controller/stages.controller.js"></script>-->
+  <script src="js/main/first.stage/first.stage.module.js"></script>
+  <script src="js/main/first.stage/config.js"></script>
+  <script src="js/main/first.stage/controller/first.stage.controller.js"></script>
+
+  <script src="js/services/apiService.js"></script>
+  <script src="js/services/cacheService.js"></script>
+  <script src="js/services/taskService.js"></script>
+</head>
+
+
+<body ng-app="smart.quest" ng-controller="AppCtrl">
+<ion-nav-view name="mainView"></ion-nav-view>
+</body>
 </html>
